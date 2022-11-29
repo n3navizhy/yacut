@@ -9,6 +9,6 @@ from yacut.models import URL_map
 
 @app.route('/')
 def index_view():
-    return
+    return render_template('index.html')
 
 
