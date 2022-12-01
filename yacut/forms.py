@@ -5,13 +5,13 @@ from wtforms.validators import DataRequired, Length, Optional
 
 class CutForm(FlaskForm):
     original_link = StringField(
-        'Введите название фильма',
+        'Ссылка',
         validators=[DataRequired(message='Обязательное поле'),
                     Length(1, 128)]
     )
-    custom_id = TextAreaField(
-        'Напишите мнение',
-        validators=[Length(1, 256), Optional()]
+    custom_id = StringField(
+        'Ваш короткий вариант',
+        validators=[Length(1, 10), Optional()]
     )
 
     submit = SubmitField('Создать')

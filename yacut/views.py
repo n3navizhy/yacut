@@ -7,8 +7,16 @@ from yacut.forms import CutForm
 from yacut.models import URL_map
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index_view():
-    return render_template('index.html')
+    form = CutForm()
+    if form.validate_on_submit():
+        short_link = URL_map(
+            original_link=form.original_link.data,
+            short=form.custom_id.data,
+        )
+        db.session.add(short_link)
+        db.session.commit()
+    return render_template('index.html', form=form)
 
 
