@@ -1,17 +1,23 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, TextAreaField, URLField
-from wtforms.validators import DataRequired, Length, Optional
+from wtforms.validators import DataRequired, Length, Optional, URL
 
+
+link = "Ссылка"
+Required_field = "Обязательное поле"
+Url_error = "пожжалуйста введите URL"
+Short_version = 'Ваш короткий вариант'
+Submit = "Создать"
 
 class CutForm(FlaskForm):
-    original_link = StringField(
-        'Ссылка',
-        validators=[DataRequired(message='Обязательное поле'),
-                    Length(1, 128)]
+    original = URLField(
+        link,
+        validators=[DataRequired(message=Required_field),
+                    Length(1, 128), URL(message=Url_error)]
     )
-    custom_id = StringField(
-        'Ваш короткий вариант',
-        validators=[Length(1, 10), Optional()]
+    custom_id = URLField(
+        Short_version,
+        validators=[Length(0, 16), Optional()]
     )
 
-    submit = SubmitField('Создать')
+    submit = SubmitField(Submit)
