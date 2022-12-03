@@ -7,8 +7,8 @@ from yacut import app, db
 from yacut.forms import CutForm
 from yacut.models import URL_map
 
-letters = string.ascii_lowercase
-not_unique_error = 'Имя  уже занято!'
+letters = string.ascii_lowercase + string.digits
+not_unique_error = 'Имя {} уже занято!'
 
 
 def check_short_id(short_id):
@@ -33,7 +33,7 @@ def index_view():
     if not short_id:
         short_id = get_unique_short_id()
     elif not check_short_id(short_id):
-        flash(not_unique_error)
+        flash(f'Имя {short_id} уже занято!', 'link-taken')
         return render_template('index.html', form=form)
     short_link = URL_map(
         original=form.original.data,
