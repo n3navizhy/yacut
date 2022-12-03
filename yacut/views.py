@@ -5,14 +5,14 @@ from flask import abort, flash, redirect, render_template
 
 from yacut import app, db
 from yacut.forms import CutForm
-from yacut.models import URL_map
+from yacut.models import URLMap
 
 letters = string.ascii_lowercase + string.digits
 not_unique_error = 'Имя {} уже занято!'
 
 
 def check_short_id(short_id):
-    if URL_map.query.filter_by(short=short_id).first() is None:
+    if URLMap.query.filter_by(short=short_id).first() is None:
         return True
     return False
 
@@ -35,7 +35,7 @@ def index_view():
     elif not check_short_id(short_id):
         flash(f'Имя {short_id} уже занято!', 'link-taken')
         return render_template('index.html', form=form)
-    short_link = URL_map(
+    short_link = URLMap(
         original=form.original.data,
         short=short_id,
     )
@@ -46,6 +46,6 @@ def index_view():
 
 @app.route('/<short_id>')
 def follow_link(short_id):
-    db_object = URL_map.query.filter(URL_map.short == short_id).first_or_404()
+    db_object = URLMap.query.filter(URLMap.short == short_id).first_or_404()
     original_link = db_object.original
     return redirect(original_link)

@@ -5,7 +5,7 @@ from yacut import db
 FIELD_NAMES = {'original': 'url', 'short': 'custom_id'}
 
 
-class URL_map(db.Model):
+class URLMap(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     original = db.Column(db.String(128), nullable=False)
     short = db.Column(db.Text, unique=True, nullable=False)

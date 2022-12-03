@@ -4,7 +4,7 @@ from http import HTTPStatus
 from flask import jsonify, request
 
 from yacut import app, db
-from yacut.models import URL_map
+from yacut.models import URLMap
 from yacut.error_handlers import APIErrors
 from yacut.views import check_short_id, get_unique_short_id
 
@@ -28,7 +28,7 @@ def create_short_link():
             raise APIErrors('Указано недопустимое имя для короткой ссылки')
     else:
         data['custom_id'] = get_unique_short_id()
-    new_url = URL_map()
+    new_url = URLMap()
     new_url.from_dict(data)
     db.session.add(new_url)
     db.session.commit()
@@ -37,7 +37,7 @@ def create_short_link():
 
 @app.route('/api/id/<short_id>/', methods=['GET'])
 def get_original_url(short_id):
-    db_object = URL_map.query.filter(URL_map.short == short_id).first()
+    db_object = URLMap.query.filter(URLMap.short == short_id).first()
     if not db_object:
         raise APIErrors('Указанный id не найден', HTTPStatus.NOT_FOUND)
     original_url = db_object.original
