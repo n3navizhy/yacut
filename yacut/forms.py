@@ -9,13 +9,14 @@ Url_error = "пожжалуйста введите URL"
 Short_version = 'Ваш короткий вариант'
 Submit = "Создать"
 
+
 class CutForm(FlaskForm):
     original = URLField(
         link,
         validators=[DataRequired(message=Required_field),
                     Length(1, 128), URL(message=Url_error)]
     )
-    custom_id = URLField(
+    custom_id = StringField(
         Short_version,
         validators=[Length(0, 16), Optional()]
     )
