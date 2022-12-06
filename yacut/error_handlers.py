@@ -2,7 +2,7 @@ from http import HTTPStatus
 
 from flask import jsonify, render_template
 
-from . import app, db
+from . import app
 
 
 class APIErrors(Exception):
@@ -26,4 +26,3 @@ def api_errors(error):
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html'), HTTPStatus.NOT_FOUND
-

@@ -1,7 +1,7 @@
 import random
 import string
 
-from flask import abort, flash, redirect, render_template
+from flask import flash, redirect, render_template
 
 from yacut import app, db
 from yacut.forms import CutForm
