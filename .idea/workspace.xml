@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e494e930-136d-43bd-9c85-3840b00bf343" name="Changes" comment="Добавил api\изменил view">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/yacut.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/yacut.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yacut/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yacut/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/forms.py" afterDir="false" />
-    </list>
+    <list default="true" id="e494e930-136d-43bd-9c85-3840b00bf343" name="Changes" comment="Pep 08" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -178,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670062841749</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Pep 08">
+      <created>1670320143504</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1670320143504</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,6 +201,7 @@
     <MESSAGE value="Добавил обработку ошибок" />
     <MESSAGE value="Внес изменения в форму и модель" />
     <MESSAGE value="Добавил api\изменил view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил api\изменил view" />
+    <MESSAGE value="Pep 08" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pep 08" />
   </component>
 </project>
