@@ -24,6 +24,7 @@ def test_index_form_post(client):
         'При отправке формы главная страница должна возвращать статус `200`'
     )
     unique_id = URLMap.query.filter_by(original=py_url, short='py').first()
+
     assert unique_id, (
         'После отправки формы в базе данных должна создаваться новая запись.'
     )

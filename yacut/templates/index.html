@@ -17,10 +17,10 @@
               {{ form.csrf_token }}
               <div>
                 <div>
-                  {{ form.original(class="form-control form-control-lg py-2 mb-3", placeholder=form.original.label.text) }}
+                  {{ form.original_link(class="form-control form-control-lg py-2 mb-3", placeholder=form.original_link.label.text) }}
                   <p>
-                    {% if form.original.errors %}
-                      {% for error in form.original.errors %}
+                    {% if form.original_link.errors %}
+                      {% for error in form.original_link.errors %}
                         <span style="color:red">{{ error }}</span>
                       {% endfor %}
                     {% endif %}  
@@ -34,7 +34,7 @@
                         <span style="color:red">{{ error }}</span>
                       {% endfor %}
                     {% endif %}
-                    {% with messages = get_flashed_messages() %}
+                    {% with messages = get_flashed_messages(category_filter=["error-message"]) %}
                       {% if messages %}
                         {% for message in messages %}
                           <span style="color:red">{{ message }}</span>

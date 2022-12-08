@@ -11,7 +11,7 @@ Submit = "Создать"
 
 
 class CutForm(FlaskForm):
-    original = URLField(
+    original_link = URLField(
         link,
         validators=[DataRequired(message=Required_field),
                     Length(1, 128), URL(message=Url_error)]
