@@ -3,7 +3,7 @@ from flask import redirect, render_template
 
 from yacut import app
 from yacut.forms import CutForm
-from .models import URLMap, new_object, get_unique_short_id, check_short_id
+from .models import new_object, get_object
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -18,5 +18,5 @@ def index_view():
 
 @app.route('/<short_id>')
 def follow_link(short_id):
-    return redirect(URLMap().get_object(short_id))
+    return redirect(get_object(short_id).original)
 

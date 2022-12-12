@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, URLField
-from wtforms.validators import DataRequired, Length, Optional, URL
-
+from wtforms.validators import DataRequired, Length, Optional, URL, Regexp
+from settings import LINK_SAMPLE
 
 LINK = "Ссылка"
 REQUIRED_FIELD = "Обязательное поле"
@@ -21,7 +21,9 @@ class CutForm(FlaskForm):
     )
     custom_id = StringField(
         SHORT_VERSION,
-        validators=[Length(max=MAX_LENGTH_CUSTOM), Optional()]
+        validators=[Length(max=MAX_LENGTH_CUSTOM), Optional(),
+                    Regexp(LINK_SAMPLE)]
+
     )
 
     submit = SubmitField(SUBMIT)

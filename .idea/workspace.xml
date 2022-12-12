@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e494e930-136d-43bd-9c85-3840b00bf343" name="Changes" comment="Добавил api\изменил view">
+    <list default="true" id="e494e930-136d-43bd-9c85-3840b00bf343" name="Changes" comment="Перевожу функции в микро-ORM">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yacut/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yacut/cli_commands.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yacut/api_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/api_views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yacut/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yacut/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yacut/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yacut/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yacut/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +53,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.error_handlers">
+  <component name="RunManager" selected="Python.settings">
     <configuration name="error_handlers" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="yacut" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,6 +96,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="settings" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="yacut" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/settings.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="yacut" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -118,6 +140,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.settings" />
         <item itemvalue="Python.error_handlers" />
         <item itemvalue="Python.forms" />
         <item itemvalue="Python.views" />
@@ -189,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670517726018</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Перевожу функции в микро-ORM">
+      <created>1670858912993</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1670858912993</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,6 +241,7 @@
     <MESSAGE value="Добавил обработку ошибок" />
     <MESSAGE value="Внес изменения в форму и модель" />
     <MESSAGE value="Добавил api\изменил view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил api\изменил view" />
+    <MESSAGE value="Перевожу функции в микро-ORM" />
+    <option name="LAST_COMMIT_MESSAGE" value="Перевожу функции в микро-ORM" />
   </component>
 </project>
