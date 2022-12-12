@@ -3,22 +3,25 @@ from wtforms import StringField, SubmitField, URLField
 from wtforms.validators import DataRequired, Length, Optional, URL
 
 
-link = "Ссылка"
-Required_field = "Обязательное поле"
-Url_error = "пожжалуйста введите URL"
-Short_version = 'Ваш короткий вариант'
-Submit = "Создать"
+LINK = "Ссылка"
+REQUIRED_FIELD = "Обязательное поле"
+URL_ERROR = "пожжалуйста введите URL"
+SHORT_VERSION = 'Ваш короткий вариант'
+SUBMIT = "Создать"
+
+MAX_LENGTH_LINK = 2048
+MAX_LENGTH_CUSTOM = 16
 
 
 class CutForm(FlaskForm):
     original_link = URLField(
-        link,
-        validators=[DataRequired(message=Required_field),
-                    Length(1, 128), URL(message=Url_error)]
+        LINK,
+        validators=[DataRequired(message=REQUIRED_FIELD),
+                    Length(max=MAX_LENGTH_LINK), URL(message=URL_ERROR)]
     )
     custom_id = StringField(
-        Short_version,
-        validators=[Length(0, 16), Optional()]
+        SHORT_VERSION,
+        validators=[Length(max=MAX_LENGTH_CUSTOM), Optional()]
     )
 
-    submit = SubmitField(Submit)
+    submit = SubmitField(SUBMIT)

@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e494e930-136d-43bd-9c85-3840b00bf343" name="Changes" comment="Добавил api\изменил view">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/yacut.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/yacut.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yacut/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yacut/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yacut/cli_commands.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/yacut/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yacut/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yacut/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yacut/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +48,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Fox/github/bs4_parser_pep&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
@@ -185,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670062841749</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Добавил api\изменил view">
+      <created>1670517726018</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1670517726018</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

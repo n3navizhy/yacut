@@ -1,4 +1,7 @@
 import os
+import string
+
+LETTERS = string.ascii_lowercase + string.digits
 
 
 class Config(object):
