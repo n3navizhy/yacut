@@ -19,4 +19,3 @@ def index_view():
 @app.route('/<short_id>')
 def follow_link(short_id):
     return redirect(get_object(short_id).original)
-

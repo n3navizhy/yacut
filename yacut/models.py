@@ -1,6 +1,6 @@
 import random
 import re
-
+import sys
 
 from http import HTTPStatus
 from datetime import datetime
@@ -20,7 +20,7 @@ def check_short_id(custom_id):
 
 def get_unique_short_id():
     custom_id = ''.join(random.choices(LETTERS, k=SHORT_LINK_LENGTH))
-    for i in range(1000):
+    for i in range(sys.getrecursionlimit()):
         if check_short_id(custom_id):
             return custom_id
         return get_unique_short_id()
