@@ -61,7 +61,7 @@
               {% if url %}
                 <h5 class="text-center">
                   Ваша новая ссылка готова:
-            {%set link = url_for('follow_link', short_id=url.short, _external=True) %}
+                      {%set link = url_for('follow_link', short_id=url.short, _external=True) %}
                   <a href="{{link}}">{{link}}</a>
                 </h5>
               {% endif %}

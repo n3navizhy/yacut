@@ -1,17 +1,15 @@
 import random
 import re
-import sys
 
-from http import HTTPStatus
 from datetime import datetime
-from flask import url_for, render_template, flash
-from yacut import db
-from yacut.error_handlers import APIErrors
-from settings import SHORT_LINK_LENGTH, LINK_SAMPLE, LETTERS
+from flask import url_for
 
+from settings import SHORT_LINK_LENGTH, LINK_SAMPLE, LETTERS
+from yacut import db
 
 FIELD_NAMES = {'original': 'url', 'short': 'custom_id'}
-not_unique_error = 'Имя {} уже занято!'
+
+ATTEMPTS = 999
 
 
 def check_short_id(custom_id):
@@ -19,55 +17,40 @@ def check_short_id(custom_id):
 
 
 def get_unique_short_id():
-    custom_id = ''.join(random.choices(LETTERS, k=SHORT_LINK_LENGTH))
-    for i in range(sys.getrecursionlimit()):
+    for i in range(ATTEMPTS):
+        custom_id = ''.join(random.choices(LETTERS, k=SHORT_LINK_LENGTH))
         if check_short_id(custom_id):
             return custom_id
-        return get_unique_short_id()
-    raise Exception("БД переполнено")
+    raise ValueError("БД переполнено")
 
 
-def new_api_object(data):
-    if 'custom_id' in data:
-        custom_id = data.get('custom_id')
+def new_object(custom_id, url):
+    if custom_id is not None:
         if not check_short_id(custom_id):
-            raise APIErrors(f'Имя "{custom_id}" уже занято.')
+            raise NameError
         if custom_id == '' or custom_id is None:
-            data['custom_id'] = get_unique_short_id()
-        elif not re.match(LINK_SAMPLE, custom_id):
-            raise APIErrors('Указано недопустимое имя для короткой ссылки')
+            custom_id = get_unique_short_id()
+        elif not re.match(LINK_SAMPLE, custom_id) or len(custom_id) >= 16:
+            raise ValueError
     else:
-        data['custom_id'] = get_unique_short_id()
-    new_url = URLMap()
-    new_url.from_dict(data)
+        custom_id = get_unique_short_id()
+    new_url = URLMap(
+        original=url,
+        short=custom_id,
+    )
     db.session.add(new_url)
     db.session.commit()
     return new_url
 
 
-def new_object(form, custom_id):
-    if not custom_id:
-        custom_id = get_unique_short_id()
-    elif not check_short_id(custom_id):
-        flash(not_unique_error.format(custom_id), 'error-message')
-        return render_template('index.html', form=form)
-    short = URLMap(
-        original=form.original_link.data,
-        short=custom_id,
-    )
-    db.session.add(short)
-    db.session.commit()
-    return short
-
-
-def get_object(short_id):
+def get_object_or_404(short_id):
     return URLMap.query.filter(URLMap.short == short_id).first_or_404()
 
 
 def get_api_object(short_id):
     db_object = URLMap.query.filter(URLMap.short == short_id).first()
     if db_object is None:
-        raise APIErrors('Указанный id не найден', HTTPStatus.NOT_FOUND)
+        raise NameError
     return db_object
 
 
@@ -83,7 +66,3 @@ class URLMap(db.Model):
             short_link=url_for('index_view', _external=True) + self.short
         )
 
-    def from_dict(self, data):
-        for field_db, field_inp in FIELD_NAMES.items():
-            if field_inp in data:
-                setattr(self, field_db, data[field_inp])

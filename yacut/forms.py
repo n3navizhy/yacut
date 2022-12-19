@@ -1,16 +1,13 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, URLField
 from wtforms.validators import DataRequired, Length, Optional, URL, Regexp
-from settings import LINK_SAMPLE
+from settings import LINK_SAMPLE, MAX_LENGTH_CUSTOM, MAX_LENGTH_LINK
 
 LINK = "Ссылка"
 REQUIRED_FIELD = "Обязательное поле"
 URL_ERROR = "пожжалуйста введите URL"
 SHORT_VERSION = 'Ваш короткий вариант'
 SUBMIT = "Создать"
-
-MAX_LENGTH_LINK = 2048
-MAX_LENGTH_CUSTOM = 16
 
 
 class CutForm(FlaskForm):
