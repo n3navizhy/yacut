@@ -65,4 +65,3 @@ class URLMap(db.Model):
             url=self.original,
             short_link=url_for('index_view', _external=True) + self.short
         )
-
