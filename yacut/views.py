@@ -4,7 +4,7 @@ from yacut import app
 from yacut.forms import CutForm
 from .models import new_object, get_object_or_404
 
-not_unique_error = 'Имя {} уже занято!'
+NOT_UNIQUE_ERROR = 'Имя {} уже занято!'
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -16,7 +16,7 @@ def index_view():
     try:
         short_link = new_object(custom_id, form.original_link.data)
     except NameError:
-        flash(not_unique_error.format(custom_id), 'error-message')
+        flash(NOT_UNIQUE_ERROR.format(custom_id), 'error-message')
         return render_template('index.html', form=form)
     return render_template('index.html', url=short_link, form=form)
 

@@ -7,22 +7,26 @@ from yacut import app
 from yacut.models import get_api_object, new_object
 from yacut.error_handlers import APIErrors
 
-api_unique_error = 'Имя "{}" уже занято.'
+API_UNIQUE_ERROR = 'Имя "{}" уже занято.'
+INCORRECT_NAME_ERROR = 'Указано недопустимое имя для короткой ссылки'
+NONE_BODY_REQUEST = 'Отсутствует тело запроса'
+REQUIRED_FIELD = '"url" является обязательным полем!'
+ID_NOT_FOUND = 'Указанный id не найден'
 
 
 @app.route('/api/id/', methods=['POST'])
 def create_short_link():
     data = request.get_json()
     if not data:
-        raise APIErrors('Отсутствует тело запроса')
+        raise APIErrors(NONE_BODY_REQUEST)
     if 'url' not in data:
-        raise APIErrors('\"url\" является обязательным полем!')
+        raise APIErrors(REQUIRED_FIELD)
     try:
         new_url = new_object(data.get('custom_id'), data.get('url'))
     except ValueError:
-        raise APIErrors('Указано недопустимое имя для короткой ссылки')
+        raise APIErrors(INCORRECT_NAME_ERROR)
     except NameError:
-        raise APIErrors(api_unique_error.format(data.get('custom_id')))
+        raise APIErrors(API_UNIQUE_ERROR.format(data.get('custom_id')))
     return jsonify(new_url.to_dict()), HTTPStatus.CREATED
 
 
@@ -31,6 +35,6 @@ def get_original_url(short_id):
     try:
         db_object = get_api_object(short_id)
     except NameError:
-        raise APIErrors('Указанный id не найден', HTTPStatus.NOT_FOUND)
+        raise APIErrors(ID_NOT_FOUND, HTTPStatus.NOT_FOUND)
     original_url = db_object.original
     return jsonify({'url': original_url}), HTTPStatus.OK

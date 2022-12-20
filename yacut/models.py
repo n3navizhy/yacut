@@ -27,11 +27,11 @@ def get_unique_short_id():
 def new_object(custom_id, url):
     if custom_id is not None:
         if not check_short_id(custom_id):
-            raise NameError
+            raise NameError("Имя уже занято")
         if custom_id == '' or custom_id is None:
             custom_id = get_unique_short_id()
         elif not re.match(LINK_SAMPLE, custom_id) or len(custom_id) >= 16:
-            raise ValueError
+            raise ValueError("Недопустимое имя для короткой ссылки")
     else:
         custom_id = get_unique_short_id()
     new_url = URLMap(

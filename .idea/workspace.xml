@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e494e930-136d-43bd-9c85-3840b00bf343" name="Changes" comment="Исправил">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yacut/api_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/api_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yacut/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yacut/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yacut/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yacut/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/yacut/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
